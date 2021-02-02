@@ -17,10 +17,7 @@ function compileSass() {
 
 function runBuild() {
   return gulp
-    .src([
-      'node_modules/babel-polyfill/dist/polyfill.js',
-      './public/js/**/*.js',
-    ])
+    .src('./public/js/**/*.js')
     .pipe(babel({
       presets: ['@babel/preset-env'],
     }))

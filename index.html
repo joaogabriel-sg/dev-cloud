@@ -5,6 +5,7 @@
   <meta name="author" content="João Gabriel Silva Gomes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>Dev Cloud</title>
+  <link rel="shortcut icon" href="./public/assets/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./public/css/style.css">
@@ -16,17 +17,22 @@
         <div class="logo-container">
           <img src="./public/assets/logo.svg" alt="Logo da Dev Cloud">
         </div>
-        <nav class="menu-container">
-          <ul class="menu">
+        <nav class="menu">
+          <ul>
             <li><a href="#">Vantagens</a></li>
             <li><a href="#">Parceiros</a></li>
             <li><a href="#">Preços</a></li>
             <li><a href="#">FAQ</a></li>
+            <li class="hidden-on-desktop"><a href="#">Login</a></li>
           </ul>
         </nav>
-        <a href="#" class="btn-login">Login</a>
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <a href="#" class="btn-login"><span>Login</span></a>
       </header>
-
       <section class="call">
         <div class="call-texts">
           <h1>Seu projeto no ar em segundos</h1>
@@ -214,7 +220,7 @@
           <p>Cuidamos da sua aplicação com qualidade e segurança, para que seus usuários estejam sempre ativos e assim mantermos uma boa relação com nossos clientes.</p>
         </div>
         <div class="footer-image-container">
-          <img src="./public/assets/clouds.svg" alt="Ilustração de nuvens">
+          <img src="./public/assets/clouds.svg" alt="Ilustração de nuvens" class="clouds-image">
         </div>
       </div>
       <div class="footer-divider"></div>

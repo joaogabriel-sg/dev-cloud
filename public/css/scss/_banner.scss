@@ -6,6 +6,7 @@
     width: 100%;
     display: block;
     transform: translateY(0.1rem);
+    animation: animate-banner-wave 10s infinite cubic-bezier(0.51, -0.36, 0.35, 0.86) alternate-reverse;
   }
 }
 
@@ -14,19 +15,152 @@
   padding-top: 1.6rem;
 
   .menu {
-    display: flex;
+    @include device(tablet) {
+      display: none;
+      background: rgba(0, 0, 0, 0.75);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      opacity: 0;
+      animation: animate-menu 0.6s ease forwards;
+    }
+
+    &.active {
+      @include device(tablet) {
+        display: block;
+      }
+
+      &+.burger {
+        position: fixed;
+        top: 3.5rem;
+        right: 1%;
+        z-index: 9999;
+      }
+    }
+
+    ul {
+      display: flex;
+      @include device(tablet) {
+        flex-direction: column;
+        @include flex-yx(center, space-evenly);
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    li {
+      @include device(tablet) {
+        transform: translateX(2rem);
+        opacity: 0;
+        @for $i from 1 to 6 {
+          &:nth-child(#{$i}) {
+            animation: animate-menu-items 0.3s #{$i / 5}s forwards;
+          }
+        }
+      }
+
+      &.hidden-on-desktop {
+        display: none;
+        @include device(tablet) {
+          display: block;
+        }
+      }
+
+      &:nth-child(odd) {
+        a::before {
+          top: 0;
+          left: 0;
+        }
+        a::after {
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      &:nth-child(even) {
+        a::before {
+          top: 0;
+          right: 0;
+        }
+        a::after {
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
 
     a {
+      position: relative;
       display: block;
+      padding: 0.25rem 0;
       margin: 0 1rem;
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 1.9rem;
       color: $extra-light-blue;
+      @include device(tablet) {
+        margin: 0 0;
+        font-size: 2.8rem;
+        line-height: 1.5em;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background: $extra-light-blue;
+        width: 0;
+        height: 0.2rem;
+        border-radius: 1rem;
+        transition: width 0.3s;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        width: 60%;
+      } 
+    }
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    @include device(tablet) {
+      display: flex;
+    }
+
+    &.active {
+      :nth-child(1) {
+        transform: translate(0rem, 0.75rem) rotate(-45deg);
+      }
+
+      :nth-child(2) {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      :nth-child(3) {
+        transform: translate(0rem, -0.45rem) rotate(45deg);
+      }
+    }
+    
+    div {
+      background: $extra-light-blue;
+      height: 0.3rem;
+      border-radius: 1rem;
+      transition: transform 0.3s, opacity 0.3s;
     }
   }
 
   .btn-login {
+    position: relative;
     background: transparent;
     @include flex-yx(center, center);
     width: 18rem;
@@ -34,10 +168,83 @@
     border: 0.2rem solid $extra-light-blue;
     border-radius: 1rem;
     text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 2.7rem;
-    color: $extra-light-blue;
+    overflow: hidden;
+    @include device(mobile) {
+      display: none;
+    }
+    
+    span {
+      position: relative;
+      z-index: 1;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.7rem;
+      color: $extra-light-blue;
+
+      &::before,
+      &::after {
+        content: 'LOGIN';
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transition: clip-path 0.6s, width 0.3s;
+      }
+
+      &::before {
+        color: $white;
+        z-index: 2;
+      }
+
+      &::after {
+        color: $blue;
+        z-index: 1;
+        clip-path: polygon(0 0, 0 0, 0 0, 85% 100%);
+      }
+    }
+
+    &:hover {
+      span::before {
+        width: 50%;
+      }
+      span::after {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%);
+      }
+    }
+    
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 100%;
+      transition: width 0.6s, transform 0.6s;
+    }
+    
+    &::after {
+      @include flex-yx(center, flex-end);
+      left: 0;
+      background: $blue;
+      transform: translate(-70%, 0) skewX(0);
+    }
+    
+    &::before {
+      @include flex-yx(center, flex-start);
+      right: 0;
+      background: $white;
+      transform: translate(70%, 0) skewX(0);
+    }
+
+    &:hover::after {
+      width: 170%;
+      transform: translate(-70%, 0) skewX(35deg);
+    }
+
+    &:hover::before {
+      width: 170%;
+      transform: translate(70%, 0) skewX(35deg);
+    }
   }
 }
 
@@ -50,12 +257,20 @@
   &-texts {
     width: 100%;
     max-width: 40rem;
+    @include device(tablet) {
+      max-width: 40rem;
+      text-align: center;
+      margin: 0 auto;
+    }
 
     h1 {
       max-width: 40rem;
       font-size: 4.8rem;
       line-height: 6.5rem;
       color: $extra-light-blue;
+      @include device(tablet) {
+        max-width: 100%;
+      }
     }
   
     h2 {
@@ -64,6 +279,9 @@
       font-size: 1.4rem;
       line-height: 1.9rem;
       color: $light-gray;
+      @include device(tablet) {
+        max-width: 100%;
+      }
     }
   
     .btn-begin {
@@ -78,10 +296,22 @@
       line-height: 2.7rem;
       font-weight: 700;
       color: $extra-light-blue;
+      transition: background 0.3s;
+      @include device(tablet) {
+        margin: 0 auto;
+      }
+      &:hover {
+        background: $light-green;
+      }
     }
   }
 
-  .hero {
-    max-width: 100%;
+  .hero-container {
+    .hero {
+      max-width: 100%;
+      @include device(tablet) {
+        display: none;
+      }
+    }
   }
 }

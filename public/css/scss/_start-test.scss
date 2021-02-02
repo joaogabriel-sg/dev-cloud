@@ -8,6 +8,10 @@
     width: 100%;
     max-width: 78rem;
     margin: 0 auto;
+    @include device(mobile) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
 
     input {
       width: 100%;
@@ -19,6 +23,9 @@
       font-weight: 600;
       color: $gray;
       outline: none;
+      @include device(mobile) {
+        height: 5.4rem;
+      }
 
       &::placeholder {
         font-weight: 400;
@@ -42,6 +49,13 @@
       color: $extra-light-blue;
       cursor: pointer;
       outline: none;
+      transition: background 0.3s;
+      @include device(mobile) {
+        max-width: 100%;
+      }
+      &:hover {
+        background: $light-green;
+      }
     }
   }
 }

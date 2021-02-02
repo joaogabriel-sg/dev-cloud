@@ -6,6 +6,7 @@
     width: 100%;
     display: block;
     transform: translateY(-0.2rem);
+    animation: animate-footer-wave 10s infinite cubic-bezier(0.51, -0.36, 0.35, 0.86) alternate-reverse;
   }
 
   &-top {
@@ -13,9 +14,18 @@
     justify-content: space-between;
     column-gap: 2rem;
     padding-top: 6rem;
+    @include device(mobile) {
+      column-gap: 0;
+    }
 
     .enterprise {
       width: 38.5rem;
+      @include device(mobile) {
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto;
+        text-align: center;
+      }
       
       p {
         margin-top: 3.2rem;
@@ -25,9 +35,13 @@
       }
     }
 
-    img {
+    .clouds-image {
       object-fit: cover;
       max-width: 100%;
+      animation: animate-clouds 5s linear infinite alternate-reverse;
+      @include device(mobile) {
+        display: none;
+      }
     }
   }
 
@@ -42,8 +56,25 @@
   &-bottom {
     @include flex-yx(center, space-between);
     padding-bottom: 6rem;
+    @include device(tablet) {
+      flex-direction: column;
+    }
 
     .social {
+      @include device(tablet) {
+        margin-bottom: 2.4rem;
+      }
+
+      a {
+        img {
+          transition: transform 0.3s;
+        }
+
+        &:hover img {
+          transform: scale(1.2);
+        }
+      }
+      
       a + a {
         margin-left: 2.4rem;
       }
@@ -53,6 +84,10 @@
       font-size: 1.4rem;
       line-height: 1.9rem;
       color: $extra-light-blue;
+      @include device(tablet) {
+        font-size: 1.2rem;
+        text-align: center;
+      }
     }
   }
 }

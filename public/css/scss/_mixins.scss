@@ -3,3 +3,16 @@
   align-items: $y-align;
   justify-content: $x-align;
 }
+
+@mixin device($size) {
+  @if $size == tablet {
+    @media screen and (max-width: $tablet-size) {
+      @content;
+    }
+  }
+  @if $size == mobile {
+    @media screen and (max-width: $mobile-size) {
+      @content;
+    }
+  }
+}

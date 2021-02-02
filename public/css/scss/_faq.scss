@@ -39,5 +39,9 @@
     font-size: 1.4rem;
     line-height: 1.9rem;
     color: $dark-gray;
+    @include device(mobile) {
+      margin-left: 0;
+      padding: 0 1.6rem 1.6rem;
+    }
   }
 }
