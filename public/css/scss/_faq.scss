@@ -1,0 +1,43 @@
+.faq {
+  padding-bottom: 8rem;
+
+  .questions {
+    width: 100%;
+    max-width: 78rem;
+    margin: 0 auto;
+  }
+
+  .question-container {
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.03);
+
+    &+.question-container {
+      margin-top: 1.6rem;
+    }
+  }
+  
+  .question {
+    @include flex-yx(center, space-between);
+    column-gap: 1.6rem;
+    padding: 1.2rem 1.6rem;
+    color: $light-blue;
+    cursor: pointer;
+    
+    span {
+      font-size: 1.4rem;
+      line-height: 1.9rem;
+      font-weight: 700;
+    }
+  }
+
+  .answer {
+    width: 100%;
+    max-width: 50rem;
+    padding-bottom: 1.6rem;
+    margin-left: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    color: $dark-gray;
+  }
+}

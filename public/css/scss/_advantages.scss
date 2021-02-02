@@ -1,0 +1,62 @@
+.advantages {
+  overflow: hidden;
+
+  .cards {
+    padding-bottom: 6rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(20rem, 23rem));
+    gap: 2rem;
+
+    .hero-advantage {
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card {
+      background: $white;
+      padding: 1.6rem;
+      border-radius: 1rem;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.03);
+
+      &:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      &:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      &:nth-child(4) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+      }
+
+      h3 {
+        display: flex;
+        align-items: center;
+
+        span {
+          padding-left: 1.6rem;
+          font-size: 2.2rem;
+          font-weight: 700;
+          line-height: 3rem;
+          color: $light-blue;
+        }
+      }
+
+      p {
+        margin-top: 1.6rem;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        color: $dark-gray;
+      }
+    }
+  }
+}

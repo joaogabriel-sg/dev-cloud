@@ -1,0 +1,11 @@
+.partners {
+  background: $white;
+  padding-bottom: 6rem;
+  overflow: hidden;
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    column-gap: 6rem;
+  }
+}

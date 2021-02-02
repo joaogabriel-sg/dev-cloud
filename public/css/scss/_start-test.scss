@@ -1,0 +1,47 @@
+.start-test {
+  background: $white;
+  padding-bottom: 6rem;
+
+  form {
+    display: flex;
+    column-gap: 2rem;
+    width: 100%;
+    max-width: 78rem;
+    margin: 0 auto;
+
+    input {
+      width: 100%;
+      max-width: 58rem;
+      padding: 0 1.6rem;
+      border: 0.2rem solid $light-blue;
+      border-radius: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $gray;
+      outline: none;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: $light-gray;
+      }
+    }
+
+    button {
+      background: $green;
+      width: 100%;
+      max-width: 18rem;
+      height: 5.4rem;
+      border: none;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      font-size: 2rem;
+      line-height: 2.7rem;
+      font-weight: 700;
+      color: $extra-light-blue;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+}
