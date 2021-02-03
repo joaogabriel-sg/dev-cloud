@@ -7,6 +7,10 @@ See live on [Dev Cloud 🔥](https://joaogabriel-sg.github.io/dev-cloud/)
 
 ## 📚 What did I learn from the project??
 
+- I improved my knowledge about UX/UI
+- I improved my knowledge about Sass
+- I learned the basics about Babel
+- I reviewed how to configure Gulp to run with the Sass compiler and Browser-Sync
 
 ## 🚀 Features
 
