@@ -96,22 +96,23 @@
         margin: 0 0;
         @include font-swl(2.8rem, 700, 1.5rem);
       }
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        background: $extra-light-blue;
-        width: 0;
-        height: 0.2rem;
-        border-radius: 1rem;
-        transition: width 0.3s;
+      @include device(desktop) {
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background: $extra-light-blue;
+          width: 0;
+          height: 0.2rem;
+          border-radius: 1rem;
+          transition: width 0.3s;
+        }
+  
+        &:hover::before,
+        &:hover::after {
+          width: 60%;
+        } 
       }
-
-      &:hover::before,
-      &:hover::after {
-        width: 60%;
-      } 
     }
   }
 

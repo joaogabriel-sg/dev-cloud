@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
-    <section class="banner">
+  <section class="banner">
       <div class="container">
       <header class="header">
         <div class="logo-container">
@@ -19,10 +19,10 @@
         </div>
         <nav class="menu">
           <ul>
-            <li><a href="#">Vantagens</a></li>
-            <li><a href="#">Parceiros</a></li>
-            <li><a href="#">Preços</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="#advantages" data-smooth>Vantagens</a></li>
+            <li><a href="#partners" data-smooth>Parceiros</a></li>
+            <li><a href="#prices" data-smooth>Preços</a></li>
+            <li><a href="#faq" data-smooth>FAQ</a></li>
             <li class="hidden-on-desktop"><a href="#">Login</a></li>
           </ul>
         </nav>
@@ -48,29 +48,29 @@
     <svg viewBox="0 0 1439 93" fill="none" xmlns="http://www.w3.org/2000/svg" class="wave"><path d="M348 11.8275C456 41.3729 402 83 683.5 92.5848C988 77 985.5 39 1050 25.6154C1103.54 14.5047 1117.5 38.9108 1182 70.9183C1316 114.744 1335 -28.5511 1439 42.3577V92.5848H683.5H0.309958C53.3617 52.999 197.778 -29.2686 348 11.8275Z" fill="#EFF7FD"/></svg>
   </section>
 
-  <section class="advantages">
+  <section class="advantages" id="advantages">
     <div class="container">
       <div class="title-group">
-        <h1 class="section-title">As vantagens da líder de mercado</h1>
-        <h2 class="section-subtitle">Facilidade, configurabilidade, segurança e escalabilidade são importantes para sua aplicação e pensando nisso, criamos as melhores ferramentas do mercado.</h2>
+        <h1 class="section-title" data-show="to-top">As vantagens da líder de mercado</h1>
+        <h2 class="section-subtitle" data-show="to-top">Facilidade, configurabilidade, segurança e escalabilidade são importantes para sua aplicação e pensando nisso, criamos as melhores ferramentas do mercado.</h2>
       </div>
       <div class="cards">
         <img src="./public/assets/bg-advantages.svg" alt="Pessoas olhando para as nuvens no topo de um monte" class="hero-advantage">
-        <div class="card">
+        <div class="card" data-show="to-top">
           <h3>
             <img src="./public/assets/advantages-code.svg" alt="1ª Vantagem - Codificação direto ao ponto">
             <span>Direto ao ponto</span>
           </h3>
           <p>Wordpress, PHP, Node.js, MySQL, MongoDB, são algumas das opções prontas.<br>Simples, rápido e sem complicações.</p>
         </div>
-        <div class="card">
+        <div class="card" data-show="to-top">
           <h3>
             <img src="./public/assets/advantages-share.svg" alt="2ª Vantagem - Múltiplas maneiras de publicação">
             <span>Publicações new school</span>
           </h3>
           <p>Suas aplicações podem ser publicadas com o old school FTPS e com o new school GIT, com deploy automático a cada push.<br>Coloque no ar da maneira que desejar.</p>
         </div>
-        <div class="card">
+        <div class="card" data-show="to-top">
           <h3>
             <img src="./public/assets/advantages-setting.svg" alt="3ª Vantagem - Configure como desejar">
             <span>Configure da sua maneira</span>
@@ -81,13 +81,13 @@
     </div>
   </section>
 
-  <section class="partners">
+  <section class="partners" id="partners">
     <div class="container">
       <div class="title-group">
-        <h1 class="section-title">As vantagens da líder de mercado</h1>
-        <h2 class="section-subtitle">Facilidade, configurabilidade, segurança e escalabilidade são importantes para sua aplicação e pensando nisso, criamos as melhores ferramentas do mercado.</h2>
+        <h1 class="section-title" data-show="to-top">As vantagens da líder de mercado</h1>
+        <h2 class="section-subtitle" data-show="to-top">Facilidade, configurabilidade, segurança e escalabilidade são importantes para sua aplicação e pensando nisso, criamos as melhores ferramentas do mercado.</h2>
       </div>
-      <div class="partners-content">
+      <div class="partners-content" data-show="to-top">
         <a href="#"><img src="./public/assets/partner-logtransp.svg" alt="Parceiro - LogTransp"></a>
         <a href="#"><img src="./public/assets/partner-softhome.svg" alt="Parceiro - SoftHome"></a>
         <a href="#"><img src="./public/assets/partner-clinicaseudes.svg" alt="Parceiro - Clínicas Eudes Pereira"></a>
@@ -98,14 +98,14 @@
 
   <svg viewBox="0 0 1440 92" fill="none" xmlns="http://www.w3.org/2000/svg" class="divider-bottom"><path d="M0.5 0H1439.5L0.5 92V0Z" fill="white"/></svg>
   
-  <section class="prices">
+  <section class="prices" id="prices">
     <div class="container">
       <div class="title-group">
-        <h1 class="section-title">Preços que derrubam a concorrência</h1>
-        <h2 class="section-subtitle">Trabalhamos com preços acessíveis a qualquer bolso e que contam com máquinas potentes, preparadas para qualquer aplicação, desde simples a potentes.</h2>
+        <h1 class="section-title" data-show="to-top">Preços que derrubam a concorrência</h1>
+        <h2 class="section-subtitle" data-show="to-top">Trabalhamos com preços acessíveis a qualquer bolso e que contam com máquinas potentes, preparadas para qualquer aplicação, desde simples a potentes.</h2>
       </div>
       <div class="prices-content">
-        <div class="plan">
+        <div class="plan" data-show="to-top">
           <div class="plan-price">
             <h3>Congestus</h3>
             <h4><sup>R$</sup>150<span>/mês</span></h4>
@@ -119,7 +119,7 @@
           </div>
           <a href="#" class="btn-try-it">Experimente</a>
         </div>
-        <div class="plan">
+        <div class="plan" data-show="to-top">
           <div class="plan-price">
             <h3>Stratocumulus</h3>
             <h4><sup>R$</sup>250<span>/mês</span></h4>
@@ -133,7 +133,7 @@
           </div>
           <a href="#" class="btn-try-it">Experimente</a>
         </div>
-        <div class="plan">
+        <div class="plan" data-show="to-top">
           <div class="plan-price">
             <h3>Cumulonimbus</h3>
             <h4><sup>R$</sup>350<span>/mês</span></h4>
@@ -156,10 +156,10 @@
   <section class="start-test">
     <div class="container">
       <div class="title-group">
-        <h1 class="section-title">Comece já os seus testes</h1>
-        <h2 class="section-subtitle">Não perca a oportunidade de testar nossas incríveis ferramentas! Cadastre seu melhor email e esteja atento na caixa de entrada, pois enviaremos uma mensagem para você.</h2>
+        <h1 class="section-title" data-show="to-top">Comece já os seus testes</h1>
+        <h2 class="section-subtitle" data-show="to-top">Não perca a oportunidade de testar nossas incríveis ferramentas! Cadastre seu melhor email e esteja atento na caixa de entrada, pois enviaremos uma mensagem para você.</h2>
       </div>
-      <form>
+      <form data-show="to-top">
         <input type="email" name="email" id="email" placeholder="Seu email aqui...">
         <button>Cadastrar</button>
       </form>
@@ -168,14 +168,14 @@
 
   <svg viewBox="0 0 1440 92" fill="none" xmlns="http://www.w3.org/2000/svg" class="divider-bottom"><path d="M0.5 0H1439.5L0.5 92V0Z" fill="white"/></svg>
 
-  <section class="faq">
+  <section class="faq" id="faq">
     <div class="container">
       <div class="title-group">
-        <h1 class="section-title">Perguntas frequentes</h1>
-        <h2 class="section-subtitle">Tire suas dúvidas assim como milhares de clientes quanto nossa empresa e produtos.</h2>
+        <h1 class="section-title" data-show="to-top">Perguntas frequentes</h1>
+        <h2 class="section-subtitle" data-show="to-top">Tire suas dúvidas assim como milhares de clientes quanto nossa empresa e produtos.</h2>
       </div>
       <div class="questions">
-        <div class="question-container">
+        <div class="question-container" data-show="to-top">
           <div class="question">
             <span>Por que eu devo escolher vocês e não outro?</span>
             <img src="./public/assets/angle.svg" alt="Clique para abrir ou fechar">
@@ -183,7 +183,7 @@
           <p class="answer">Somos uma empresa que preza pela simplicidade para que o cliente consiga realizar da maneira mais fácil a sua hospedagem. Caso não consiga, a nossa equipe presta suporte de ponta a ponta. Além disso, possuímos ótimos preços e máquinas potentes prontas para rodar sua aplicação.</p>
         </div>
         
-        <div class="question-container">
+        <div class="question-container" data-show="to-top">
           <div class="question">
             <span>Como será o suporte da equipe de vocês?</span>
             <img src="./public/assets/angle.svg" alt="Clique para abrir ou fechar">
@@ -191,15 +191,15 @@
           <p class="answer">Nossa equipe de suporte atende 24 horas por dia durante os 7 dias da semana. Além disso, realizamos treinamentos mensalmente para qualificar cada vez mais nossos profissionais e assim possibilitar um ótimo atendimento a você.</p>
         </div>
 
-        <div class="question-container">
+        <div class="question-container" data-show="to-top">
           <div class="question">
             <span>Posso testar o serviço antes?</span>
             <img src="./public/assets/angle.svg" alt="Clique para abrir ou fechar">
           </div>
-          <p class="answer">Sim! A Dev Cloud ofere 7 dias grátis para você testar as ferramentas e configurações da nossa hospedagem.</p>
+          <p class="answer">Sim! A Dev Cloud oferece 7 dias grátis para você testar as ferramentas e configurações da nossa hospedagem.</p>
         </div>
 
-        <div class="question-container">
+        <div class="question-container" data-show="to-top">
           <div class="question">
             <span>Como funciona a cobrança?</span>
             <img src="./public/assets/angle.svg" alt="Clique para abrir ou fechar">
