@@ -34,7 +34,7 @@
     max-width: 50rem;
     padding-bottom: 1.6rem;
     margin-left: 1.6rem;
-    @include font-swl(1.4rem, 700, 1.9rem);
+    @include font-swl(1.4rem, 400, 1.9rem);
     color: $dark-gray;
     @include device(mobile) {
       margin-left: 0;
