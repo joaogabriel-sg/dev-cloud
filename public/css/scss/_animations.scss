@@ -1,0 +1,52 @@
+@keyframes animate-menu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-menu-items {
+  from {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-banner-wave {
+  0% {
+    transform: translateY(0.1rem) scaleX(1.05) scaleY(1.25);
+  }
+  50% {
+    transform: translateY(0.1rem) scaleX(1.15) scaleY(1.15);
+  }
+  100% {
+    transform: translateY(0.1rem) scaleX(1.02) scaleY(1);
+  }
+}
+
+@keyframes animate-footer-wave {
+  0% {
+    transform: translateY(-0.2rem) scaleX(1.05) scaleY(1.25);
+  }
+  50% {
+    transform: translateY(-0.2rem) scaleX(1.15) scaleY(1.15);
+  }
+  100% {
+    transform: translateY(-0.2rem) scaleX(1.02) scaleY(1);
+  }
+}
+
+@keyframes animate-clouds {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-2rem, -0.1rem);
+  }
+}

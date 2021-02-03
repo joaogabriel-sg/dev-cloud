@@ -1,0 +1,59 @@
+.start-test {
+  background: $white;
+  padding-bottom: 6rem;
+
+  form {
+    display: flex;
+    column-gap: 2rem;
+    width: 100%;
+    max-width: 78rem;
+    margin: 0 auto;
+    @include device(mobile) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+
+    input {
+      width: 100%;
+      max-width: 58rem;
+      padding: 0 1.6rem;
+      border: 0.2rem solid $light-blue;
+      border-radius: 1rem;
+      @include font-swl(1.4rem, 600);
+      color: $gray;
+      outline: none;
+      @include device(mobile) {
+        height: 5.4rem;
+      }
+
+      &::placeholder {
+        @include font-swl;
+        font-style: italic;
+        color: $light-gray;
+      }
+    }
+
+    button {
+      background: $green;
+      width: 100%;
+      max-width: 18rem;
+      height: 5.4rem;
+      border: none;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      @include font-swl(2rem, 700, 2.7rem);
+      color: $extra-light-blue;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.3s;
+
+      @include device(mobile) {
+        max-width: 100%;
+      }
+
+      &:hover {
+        background: $light-green;
+      }
+    }
+  }
+}
