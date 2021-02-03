@@ -1,11 +1,23 @@
+// DEVICE SIZES ==============================
+$tablet-size: 768px;
+$mobile-size: 620px;
+
+// COLORS ====================================
 $blue: #264FC0;
 $dark-blue: #001076;
 $light-blue: #51B9D1;
 $extra-light-blue: #EFF7FD;
 
 $black: #1E2534;
-$white: #F0F0F0;
+$dark-white: #F0F0F0;
+$white: #FFFFFF;
 
 $gray: #A5ABB6;
 $dark-gray: #8D939F;
-$light-gray: D0D2D4;
+$light-gray: #D0D2D4;
+
+$green: #3BCA82;
+$light-green: #44df91;
+
+// SHADOWS ===================================
+$shadow: 0px 5px 10px rgba(0, 0, 0, 0.03);

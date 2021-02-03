@@ -1,0 +1,40 @@
+@mixin flex-yx($y-align, $x-align) {
+  display: flex;
+  align-items: $y-align;
+  justify-content: $x-align;
+}
+
+@mixin flex-y($y-align) {
+  display: flex;
+  align-items: $y-align;
+}
+
+@mixin flex-x($x-align) {
+  display: flex;
+  justify-content: $x-align;
+}
+
+@mixin font-swl($size: 1.6rem, $weight: 400, $line: 1.5em) {
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+@mixin position-zero($positions...) {
+  @each $pos in $positions {
+    #{$pos}: 0;
+  }
+}
+
+@mixin device($size) {
+  @if $size == tablet {
+    @media screen and (max-width: $tablet-size) {
+      @content;
+    }
+  }
+  @if $size == mobile {
+    @media screen and (max-width: $mobile-size) {
+      @content;
+    }
+  }
+}

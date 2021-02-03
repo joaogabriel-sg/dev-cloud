@@ -1,0 +1,44 @@
+.faq {
+  padding-bottom: 8rem;
+
+  .questions {
+    width: 100%;
+    max-width: 78rem;
+    margin: 0 auto;
+  }
+
+  .question-container {
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: $shadow;
+
+    &+.question-container {
+      margin-top: 1.6rem;
+    }
+  }
+  
+  .question {
+    @include flex-yx(center, space-between);
+    column-gap: 1.6rem;
+    padding: 1.2rem 1.6rem;
+    color: $light-blue;
+    cursor: pointer;
+    
+    span {
+      @include font-swl(1.4rem, 700, 1.9rem);
+    }
+  }
+
+  .answer {
+    width: 100%;
+    max-width: 50rem;
+    padding-bottom: 1.6rem;
+    margin-left: 1.6rem;
+    @include font-swl(1.4rem, 700, 1.9rem);
+    color: $dark-gray;
+    @include device(mobile) {
+      margin-left: 0;
+      padding: 0 1.6rem 1.6rem;
+    }
+  }
+}
