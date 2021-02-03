@@ -10,8 +10,7 @@
   }
 
   &-top {
-    display: flex;
-    justify-content: space-between;
+    @include flex-x(space-between);
     column-gap: 2rem;
     padding-top: 6rem;
     @include device(mobile) {
@@ -29,8 +28,7 @@
       
       p {
         margin-top: 3.2rem;
-        font-size: 1.4rem;
-        line-height: 1.9rem;
+        @include font-swl(1.4rem, 400, 1.9rem);
         color: $extra-light-blue;
       }
     }
@@ -81,11 +79,10 @@
     }
 
     p {
-      font-size: 1.4rem;
-      line-height: 1.9rem;
+      @include font-swl(1.4rem, 400, 1.9rem);
       color: $extra-light-blue;
       @include device(tablet) {
-        font-size: 1.2rem;
+        @include font-swl(1.2rem, 400, 1.9rem);
         text-align: center;
       }
     }

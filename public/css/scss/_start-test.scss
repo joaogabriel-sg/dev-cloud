@@ -19,8 +19,7 @@
       padding: 0 1.6rem;
       border: 0.2rem solid $light-blue;
       border-radius: 1rem;
-      font-size: 1.4rem;
-      font-weight: 600;
+      @include font-swl(1.4rem, 600);
       color: $gray;
       outline: none;
       @include device(mobile) {
@@ -28,8 +27,7 @@
       }
 
       &::placeholder {
-        font-weight: 400;
-        font-size: 1.4rem;
+        @include font-swl;
         font-style: italic;
         color: $light-gray;
       }
@@ -43,16 +41,16 @@
       border: none;
       border-radius: 1rem;
       text-transform: uppercase;
-      font-size: 2rem;
-      line-height: 2.7rem;
-      font-weight: 700;
+      @include font-swl(2rem, 700, 2.7rem);
       color: $extra-light-blue;
       cursor: pointer;
       outline: none;
       transition: background 0.3s;
+
       @include device(mobile) {
         max-width: 100%;
       }
+
       &:hover {
         background: $light-green;
       }

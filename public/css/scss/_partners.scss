@@ -4,8 +4,7 @@
   overflow: hidden;
 
   &-content {
-    display: flex;
-    justify-content: center;
+    @include flex-x(center);
     column-gap: 6rem;
     @include device(mobile) {
       flex-direction: column;

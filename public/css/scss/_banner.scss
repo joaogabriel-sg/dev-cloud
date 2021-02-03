@@ -19,10 +19,7 @@
       display: none;
       background: rgba(0, 0, 0, 0.75);
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      @include position-zero(top, bottom, left, right);
       z-index: 999;
       opacity: 0;
       animation: animate-menu 0.6s ease forwards;
@@ -71,23 +68,19 @@
 
       &:nth-child(odd) {
         a::before {
-          top: 0;
-          left: 0;
+          @include position-zero(top, left);
         }
         a::after {
-          bottom: 0;
-          right: 0;
+          @include position-zero(bottom, right);
         }
       }
 
       &:nth-child(even) {
         a::before {
-          top: 0;
-          right: 0;
+          @include position-zero(top, right);
         }
         a::after {
-          bottom: 0;
-          left: 0;
+          @include position-zero(bottom, left);
         }
       }
     }
@@ -97,14 +90,11 @@
       display: block;
       padding: 0.25rem 0;
       margin: 0 1rem;
-      font-size: 1.4rem;
-      font-weight: 700;
-      line-height: 1.9rem;
+      @include font-swl(1.4rem, 700, 1.9rem);
       color: $extra-light-blue;
       @include device(tablet) {
         margin: 0 0;
-        font-size: 2.8rem;
-        line-height: 1.5em;
+        @include font-swl(2.8rem, 700, 1.5rem);
       }
 
       &::before,
@@ -176,17 +166,14 @@
     span {
       position: relative;
       z-index: 1;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 2.7rem;
+      @include font-swl(2rem, 700, 2.7rem);
       color: $extra-light-blue;
 
       &::before,
       &::after {
         content: 'LOGIN';
         position: absolute;
-        top: 0;
-        left: 0;
+        @include position-zero(top, left);
         overflow: hidden;
         transition: clip-path 0.6s, width 0.3s;
       }
@@ -216,7 +203,7 @@
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      @include position-zero(top);
       width: 0;
       height: 100%;
       transition: width 0.6s, transform 0.6s;
@@ -224,33 +211,33 @@
     
     &::after {
       @include flex-yx(center, flex-end);
-      left: 0;
+      @include position-zero(left);
       background: $blue;
       transform: translate(-70%, 0) skewX(0);
     }
     
     &::before {
       @include flex-yx(center, flex-start);
-      right: 0;
+      @include position-zero(right);
       background: $white;
       transform: translate(70%, 0) skewX(0);
     }
 
-    &:hover::after {
-      width: 170%;
-      transform: translate(-70%, 0) skewX(35deg);
-    }
-
-    &:hover::before {
-      width: 170%;
-      transform: translate(70%, 0) skewX(35deg);
+    &:hover {
+      &::after {
+        width: 170%;
+        transform: translate(-70%, 0) skewX(35deg);
+      }
+      &::before {
+        width: 170%;
+        transform: translate(70%, 0) skewX(35deg);
+      }
     }
   }
 }
 
 .call {
-  display: flex;
-  justify-content: space-between;
+  @include flex-x(space-between);
   margin-top: 9rem;
   padding-bottom: 5rem;
 
@@ -265,8 +252,7 @@
 
     h1 {
       max-width: 40rem;
-      font-size: 4.8rem;
-      line-height: 6.5rem;
+      @include font-swl(4.8rem, 700, 6.5rem);
       color: $extra-light-blue;
       @include device(tablet) {
         max-width: 100%;
@@ -276,8 +262,7 @@
     h2 {
       max-width: 38rem;
       margin: 2rem 0 3.6rem;
-      font-size: 1.4rem;
-      line-height: 1.9rem;
+      @include font-swl(1.4rem, 700, 1.9rem);
       color: $light-gray;
       @include device(tablet) {
         max-width: 100%;
@@ -292,9 +277,7 @@
       border: none;
       border-radius: 1rem;
       text-transform: uppercase;
-      font-size: 2rem;
-      line-height: 2.7rem;
-      font-weight: 700;
+      @include font-swl(2rem, 700, 2.7rem);
       color: $extra-light-blue;
       transition: background 0.3s;
       @include device(tablet) {
