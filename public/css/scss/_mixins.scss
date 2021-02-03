@@ -27,6 +27,11 @@
 }
 
 @mixin device($size) {
+  @if $size == desktop {
+    @media screen and (min-width: $desktop-min-size) {
+      @content;
+    }
+  }
   @if $size == tablet {
     @media screen and (max-width: $tablet-size) {
       @content;

@@ -66,3 +66,31 @@ button {
 .divider-top {
   transform: translateY(0.5rem);
 }
+
+[data-show="to-top"] {
+  opacity: 0;
+  &.show {
+    animation: show-to-top 1s ease forwards;
+  }
+}
+
+[data-show="to-left"] {
+  opacity: 0;
+  &.show {
+    animation: show-to-left 1s ease forwards;
+  }
+}
+
+[data-show="to-right"] {
+  opacity: 0;
+  &.show {
+    animation: show-to-right 1s ease forwards;
+  }
+}
+
+[data-show="to-bottom"] {
+  opacity: 0;
+  &.show {
+    animation: show-to-bottom 1s ease forwards;
+  }
+}

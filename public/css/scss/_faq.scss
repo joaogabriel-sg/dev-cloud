@@ -11,34 +11,46 @@
     background: $white;
     border-radius: 1rem;
     box-shadow: $shadow;
+    padding: 1.2rem 1.6rem;
 
     &+.question-container {
       margin-top: 1.6rem;
+    }
+
+    &.active {
+      .question img {
+        transform: rotate(-90deg);
+      }
+      .answer {
+        display: block;
+        animation: animate-faq-questions 1.2s forwards;
+      }
     }
   }
   
   .question {
     @include flex-yx(center, space-between);
     column-gap: 1.6rem;
-    padding: 1.2rem 1.6rem;
     color: $light-blue;
     cursor: pointer;
     
     span {
       @include font-swl(1.4rem, 700, 1.9rem);
     }
+
+    img {
+      transition: transform 0.3s;
+    }
   }
 
   .answer {
+    display: none;
+    opacity: 0;
     width: 100%;
     max-width: 50rem;
-    padding-bottom: 1.6rem;
-    margin-left: 1.6rem;
+    max-height: 0;
+    margin-top: 0.8rem;
     @include font-swl(1.4rem, 400, 1.9rem);
     color: $dark-gray;
-    @include device(mobile) {
-      margin-left: 0;
-      padding: 0 1.6rem 1.6rem;
-    }
   }
 }
